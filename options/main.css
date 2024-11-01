@@ -1,0 +1,289 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-color: #607f99;
+  }
+  
+  /* 容器 */
+  .container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 標題 */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* 內容項目 */
+  .content-item {
+    margin-bottom: 20px;
+    width: -webkit-fill-available;
+  }
+  
+  .title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* 輸入框 */
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* 輸入框焦點效果 */
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* 提示文字 */
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* 動態效果 */
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* 調整輸入框的間距 */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content input {
+    flex-grow: 1;
+  }
+
+  .content>.field-item {
+    width: 100%;
+  }
+  
+  /* 開關容器 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* 隱藏原始 checkbox */
+.switch>input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 滑塊樣式 */
+.switch>.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.switch>.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* 當 checkbox 被選中時 */
+.switch>input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+.switch>input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+textarea.field-item {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical; /* 允許上下調整高度 */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* textarea 聚焦狀態 */
+textarea.field-item:focus {
+  border-color: #4CAF50; /* 聚焦邊框顏色 */
+  box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+/* Placeholder 樣式 */
+textarea.field-item::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+#floatingButton {
+  position: fixed; /* 固定位置 */
+  bottom: 20px; /* 距離底部20px */
+  right: 20px; /* 距離右邊20px */
+  display: flex; /* 使用彈性盒子布局 */
+  flex-direction: column; /* 垂直排列 */
+  gap: 10px; /* 按鈕間距 */
+  z-index: 1000; /* 確保在最上層 */
+}
+
+.floatingButton {
+  background-color: #007BFF; /* 背景顏色 */
+  color: white; /* 字體顏色 */
+  padding: 10px 15px; /* 內邊距 */
+  border-radius: 5px; /* 圓角 */
+  text-decoration: none; /* 去掉下劃線 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+  transition: background-color 0.3s; /* 過渡效果 */
+}
+
+.floatingButton:hover {
+  background-color: #0056b3; /* 懸停時的背景顏色 */
+}
+
+.hint {
+  position: relative; /* 相對定位，使提示按鈕可以絕對定位 */
+  display: inline-block; /* 垂直排列並將其包裹在內容周圍 */
+  margin: 10px; /* 增加一些外邊距 */
+}
+
+.hint-btn {
+  color: #fff;
+  text-align: center;
+  width: 20px; /* 按鈕寬度 */
+  height: 20px; /* 按鈕高度 */
+  line-height: 20px;
+  background-color: #007BFF; /* 按鈕背景顏色 */
+  border-radius: 50%; /* 圓形按鈕 */
+  cursor: pointer; /* 鼠標懸停時顯示手形光標 */
+  position: absolute; /* 絕對定位以便在內容周圍顯示 */
+  top: -5px; /* 靠近容器的頂部 */
+  transform: translateX(-50%); /* 確保按鈕真正居中 */
+}
+
+.hint-content {
+  width: max-content;
+  display: none; /* 隱藏提示內容 */
+  position: absolute; /* 絕對定位以便自由控制位置 */
+  top: 15px; /* 顯示在按鈕上方 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 確保內容真正居中 */
+  background-color: #f9f9f9; /* 提示內容的背景顏色 */
+  border: 1px solid #ccc; /* 邊框 */
+  border-radius: 5px; /* 圓角 */
+  padding: 10px; /* 內邊距 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+  z-index: 1000; /* 確保在最上層 */
+}
+
+/* 提示按鈕懸停時顯示內容 */
+.hint:hover>.hint-content {
+  display: block; /* 鼠標懸停時顯示提示內容 */
+}
+
+.flex-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  gap: 10px;
+  border: 1px #bbb dashed;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.flex-content>.flex-item>.item-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.flex-content>.flex-item>.item-content>img {
+  width: 100%;
+}
+
+.switch-radio {
+  display: flex; /* 使項目水平排列 */
+  gap: 10px; /* 每個選項之間的間距 */
+}
+
+.switch-radio>.radio-item {
+  position: relative; /* 為偽元素定位做準備 */
+  padding: 10px 20px; /* 內邊距讓項目更大 */
+  background-color: #f0f0f0; /* 項目背景顏色 */
+  border: 2px solid #ddd; /* 項目邊框 */
+  border-radius: 20px; /* 圓角讓其看起來像按鈕 */
+  cursor: pointer; /* 鼠標指針變成手形 */
+  transition: background-color 0.3s, border-color 0.3s; /* 過渡效果 */
+}
+
+/* 隱藏實際的 radio 按鈕 */
+.switch-radio>.radio-item input[type="radio"] {
+  display: none;
+}
+
+/* 當 radio 被選中時更改項目的樣式 */
+.switch-radio>.radio-item:has(input[type="radio"]:checked) {
+  background-color: #007BFF; /* 選中時的背景顏色 */
+  border-color: #007BFF; /* 選中時的邊框顏色 */
+  color: white; /* 選中時的文字顏色 */
+}
+
+/* 懸停效果 */
+.switch-radio>.radio-item:hover {
+  background-color: #e0e0e0;
+}

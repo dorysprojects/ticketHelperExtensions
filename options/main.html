@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>設定</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="../js/common/jquery.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <div id="eventSetting" class="container">
+    <div class="header">
+      <h1>活動設定</h1>
+    </div>
+    <div class="content">
+      <div class="content-item">
+        <div class="title">
+          選擇平台
+        </div>
+        <div class="content">
+          <div class="switch-radio">
+            <label class="radio-item">
+              tixCraft
+              <input type="radio" name="platform" value="tixCraft" class="field-item" checked>
+            </label>
+            <label class="radio-item">
+              kkTix
+              <input type="radio" name="platform" value="kkTix" class="field-item">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          自動選活動
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>開啟後，自動選擇[活動]，並自動跳轉[活動頁]</p>
+              <div class="flex-content">
+                <div class="flex-item" data-platform="tixCraft">
+                  <div class="item-title">tixCraft</div>
+                  <div class="item-content">
+                    <img src="../images/tixCraft/index.jpg" alt="活動代碼">
+                  </div>
+                </div>
+                <div class="flex-item" data-platform="kkTix">
+                  <div class="item-title">kkTix</div>
+                  <div class="item-content">
+                    <img src="../images/kkTix/index.jpg" alt="活動代碼">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="autoChooseEvent" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          活動代碼(選填，首頁自動跳轉[活動頁])
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>輸入[活動代碼]，或貼上[活動連結]</p>
+              <div class="flex-content">
+                <div class="flex-item" data-platform="tixCraft">
+                  <div class="item-title">tixCraft</div>
+                  <div class="item-content">
+                    <img src="../images/tixCraft/eventCode.jpg" alt="活動代碼">
+                  </div>
+                </div>
+                <div class="flex-item" data-platform="kkTix">
+                  <div class="item-title">kkTix</div>
+                  <div class="item-content">
+                    <img src="../images/kkTix/eventCode.jpg" alt="活動代碼">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <input type="text" name="eventCode" class="field-item" placeholder="輸入活動代碼，或貼上活動連結">
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          優先購代碼(選填)
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>有些活動會先釋放一些名額，需要輸入[優先購代碼]才能搶先購買</p>
+              <p>(目前僅支援tixCraft)</p>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <input type="text" name="checkCode" class="field-item">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sessionSetting" class="container">
+    <div class="header">
+      <h1>場次設定</h1>
+    </div>
+    <div class="content">
+      <div class="content-item">
+        <div class="title">
+          無場次自動重整
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="noSessionAutoRefresh" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          自動選場次
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="autoChooseSession" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          只選[優先場次]
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>關閉：會先依序選擇[優先場次]，再依序選擇[其他場次]</p>
+              <p>開啟：只會選擇[優先場次]</p>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="onlyChoosePrioritySession" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          優先場次(選填，斷行分隔)
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>輸入[活動相關關鍵字]</p>
+              <div class="flex-content">
+                <div class="flex-item" data-platform="tixCraft">
+                  <div class="item-title">tixCraft</div>
+                  <div class="item-content">
+                    <img src="../images/tixCraft/chooseEvent.jpg" alt="優先場次">
+                  </div>
+                </div>
+                <div class="flex-item" data-platform="kkTix">
+                  <div class="item-title">kkTix</div>
+                  <div class="item-content">
+                    <img src="../images/kkTix/chooseEvent.jpg" alt="優先場次">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <textarea name="prioritySessionList" class="field-item" placeholder="依照優先順序填入"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ticketSetting" class="container">
+    <div class="header">
+      <h1>票券設定</h1>
+    </div>
+    <div class="content">
+      <div class="content-item">
+        <div class="title">
+          無票自動重整
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="noTicketAutoRefresh" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          自動選票
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="autoChooseTicket" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          只選[優先票種]
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>關閉：會先依序選擇[優先票種]，再選擇[有庫存第一個]票種</p>
+              <p>開啟：只會選擇[優先票種]</p>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="onlyChoosePriorityTicket" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          可接受低於[張數]
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>開啟：皆無超過[張數]的票種時，會再選擇低於[張數]且尚有票的票種。</p>
+              <p>關閉：不再選擇低於[張數]的票種。</p>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="autoChooseTicketWhenLower" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          優先票種(選填，斷行分隔)
+        </div>
+        <div class="content">
+          <textarea name="priorityTicketList" class="field-item" placeholder="依照優先順序填入"></textarea>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          張數
+        </div>
+        <div class="content">
+          <input type="number" name="numberOfTickets" class="field-item" min="1" max="4" value="2" placeholder="預設:2">
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">
+          自動填答案
+          <div class="hint">
+            <div class="hint-btn">i</div>
+            <div class="hint-content">
+              <p>開啟後，自動填入[預填答案]</p>
+              (目前僅支援kkTix[問答題])
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <label class="switch">
+            <input type="checkbox" name="autoFillAnswer" class="field-item">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="title">預填答案(選填，斷行分隔)</div>
+        <div class="content">
+          <textarea name="preFilledAnswers" class="field-item" placeholder="依照優先順序填入"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="floatingButton">
+    <a href="#eventSetting" class="floatingButton">活動設定</a>
+    <a href="#sessionSetting" class="floatingButton">場次設定</a>
+    <a href="#ticketSetting" class="floatingButton">票券設定</a>
+  </div>
+</body>
+</html>
